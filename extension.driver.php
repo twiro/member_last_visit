@@ -115,7 +115,9 @@
 		}
 
 		public function __logVisit() {
-			if(!class_exists('Symphony')) return false;
+			$driver = Symphony::ExtensionManager()->create('members');
+			
+			if(!$member_id = $driver->getMemberDriver()->getMemberID()) return false;
 
 			$cookie = new Cookie(
 				'member_last_visit', TWO_WEEKS, __SYM_COOKIE_PATH__, null, true
@@ -130,8 +132,6 @@
 			} else {
 				$cookie->set('last-visit', time());
 			}
-
-			$driver = Symphony::ExtensionManager()->create('members');
 
 			$sectionManager = $driver::$entryManager->sectionManager;
 			$membersSectionSchema = array();
@@ -160,7 +160,6 @@
 					$last_visit = extension_member_last_visit::$entryManager->fieldManager->fetch($field['id']);
 				}
 			}
-			$member_id = $driver->getMemberDriver()->getMemberID();
 
 			$status = Field::__OK__;
 			$data = $last_visit->processRawFieldData(
