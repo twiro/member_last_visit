@@ -2,7 +2,7 @@
 
 Works in conjunction with the Members extension and logs a member's last visit.
 
-- Version: 1.0
+- Version: 1.01
 - Author: Mark Lewis <mark@casadelewis.com>
 - Build Date: 06 March 2012
 - Requirements: Symphony 2.2
@@ -22,4 +22,5 @@ Works in conjunction with the Members extension and logs a member's last visit.
 
 ##History
 
+- 1.01 Fixed bug where __logVisit returned false incorrectly
 - 1.0 Initial release

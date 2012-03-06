@@ -14,6 +14,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.01" date="2012-03-06" min="2.2">
+			- Fixed bug where __logVisit returned false incorrectly
+		</release>
 		<release version="1.0" date="2012-03-06" min="2.2">
 			- Initial release
 		</release>
