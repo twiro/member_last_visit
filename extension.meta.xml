@@ -3,6 +3,7 @@
 	<name>Member Last Visit</name>
 	<description>Works in conjunction with the Members extension and logs a member's last visit.</description>
 	<repo type="github">https://github.com/lewiswharf/member_last_visit</repo>
+	<url type="discuss">http://symphony-cms.com/discuss/thread/85292/</url>
 	<types>
 		<type>Field</type>
 	</types>
