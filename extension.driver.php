@@ -12,8 +12,8 @@
 		public function about() {
 			return array(
 				'name'			=> 'Member Last Visit',
-				'version'		=> '1.0',
-				'release-date'	=> '2012-03-06',
+				'version'		=> '1.02',
+				'release-date'	=> '2012-05-14',
 				'author'		=> array(
 					'name'			=> 'Mark Lewis',
 					'website'		=> 'http://casadelewis.com',
@@ -124,7 +124,7 @@
 			);
 
 			if ($last_visit_date = $cookie->get('last-visit')) {
-				if (strtotime('+' . extension_member_last_visit::getInterval() . ' minutes', $last_visit_date) > time()) {
+				if ( ($last_visit_date + (extension_member_last_visit::getInterval() * 60)) > time()) {
 					return false;
 				} else {
 					$cookie->set('last-visit', time());

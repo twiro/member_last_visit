@@ -2,9 +2,9 @@
 
 Works in conjunction with the Members extension and logs a member's last visit.
 
-- Version: 1.01
+- Version: 1.02
 - Author: Mark Lewis <mark@casadelewis.com>
-- Build Date: 06 March 2012
+- Build Date: 14 May 2012
 - Requirements: Symphony 2.2
 
 ##Install
@@ -15,6 +15,7 @@ Works in conjunction with the Members extension and logs a member's last visit.
    from the with-selected menu, then click Apply.
 3. Choose a visit interval under Symphony preferences.
 4. Add the field type, "Members: Last Visit" to your Member section.
+5. Resave existing member entries.
 
 ##Uninstall
 
@@ -22,5 +23,6 @@ Works in conjunction with the Members extension and logs a member's last visit.
 
 ##History
 
+- 1.02 Changed last vist calculation
 - 1.01 Fixed bug where __logVisit returned false incorrectly
 - 1.0 Initial release
