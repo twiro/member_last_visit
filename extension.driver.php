@@ -12,8 +12,8 @@
 		public function about() {
 			return array(
 				'name'			=> 'Member Last Visit',
-				'version'		=> '1.02',
-				'release-date'	=> '2012-05-14',
+				'version'		=> '1.03',
+				'release-date'	=> '2012-05-20',
 				'author'		=> array(
 					'name'			=> 'Mark Lewis',
 					'website'		=> 'http://casadelewis.com',
@@ -166,8 +166,8 @@
 				DateTimeObj::get('Y-m-d H:i:s', time()), 
 				$status
 			);
-
-			Symphony::Database()->update($data, 'tbl_entries_data_' . $last_visit->get('id'), ' `entry_id` = ' . $member_id);
+		 	$data['entry_id'] = $member_id;
+			Symphony::Database()->insert($data, 'tbl_entries_data_' . $last_visit->get('id'), true);
 		}
 
 		public static function getInterval() {

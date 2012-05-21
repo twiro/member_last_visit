@@ -14,6 +14,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="1.03" date="2012-05-20" min="2.2">
+			- Fixed bug where existing members were not logged
+		</release>
 		<release version="1.02" date="2012-05-14" min="2.2">
 			- Changed last vist calculation
 		</release>
