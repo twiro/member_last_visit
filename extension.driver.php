@@ -1,5 +1,8 @@
 <?php
 	
+	include_once(TOOLKIT . '/class.entrymanager.php');
+	include_once(TOOLKIT . '/class.sectionmanager.php');
+
 	class extension_member_last_visit extends Extension {
 		
 		public static $entryManager = null;
@@ -7,19 +10,6 @@
 
 		public function __construct() {
 			extension_member_last_visit::$entryManager = new EntryManager(Symphony::Engine());
-		}
-
-		public function about() {
-			return array(
-				'name'			=> 'Member Last Visit',
-				'version'		=> '1.03',
-				'release-date'	=> '2012-05-20',
-				'author'		=> array(
-					'name'			=> 'Mark Lewis',
-					'website'		=> 'http://casadelewis.com',
-					'email'			=> 'mark@casadelewis.com'
-				)
-			);
 		}
 				
 		public function getSubscribedDelegates() {
