@@ -123,41 +123,16 @@
 				$cookie->set('last-visit', time());
 			}
 
-			$sectionManager = $driver::$entryManager->sectionManager;
-			$membersSectionSchema = array();
+            $last_visit = FieldManager::fetch(null, $driver::getMembersSection(), 'ASC', 'sortorder', 'member_last_visit');
 
-			if(
-				!is_null($driver::getMembersSection()) &&
-				is_numeric($driver::getMembersSection())
-			) {
-				$memberSection = $sectionManager->fetch(
-					$driver::getMembersSection()
-				);
-
-				if($memberSection instanceof Section) {
-					$membersSectionSchema = $memberSection->fetchFieldsSchema();
-				}
-				else {
-					Symphony::$Log->pushToLog(
-						__("The Member's section, %d, saved in the configuration could not be found.", array($driver::getMembersSection())),
-						E_ERROR, true
-					);
-				}
-			}
-
-			foreach($membersSectionSchema as $field) {
-				if ($field['type'] == 'member_last_visit') {
-					$last_visit = extension_member_last_visit::$entryManager->fieldManager->fetch($field['id']);
-				}
-			}
-
-			$status = Field::__OK__;
-			$data = $last_visit->processRawFieldData(
-				DateTimeObj::get('Y-m-d H:i:s', time()), 
-				$status
-			);
-		 	$data['entry_id'] = $member_id;
-			Symphony::Database()->insert($data, 'tbl_entries_data_' . $last_visit->get('id'), true);
+            $last_visit = current($last_visit);
+            $status = Field::__OK__;
+            $data = $last_visit->processRawFieldData(
+                DateTimeObj::get('Y-m-d H:i:s', time()),
+                $status
+            );
+            $data['entry_id'] = $member_id;
+            Symphony::Database()->insert($data, 'tbl_entries_data_' . $last_visit->get('id'), true);
 		}
 
 		public static function getInterval() {
