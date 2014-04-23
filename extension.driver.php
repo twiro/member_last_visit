@@ -1,17 +1,17 @@
 <?php
-	
+
 	include_once(TOOLKIT . '/class.entrymanager.php');
 	include_once(TOOLKIT . '/class.sectionmanager.php');
 
 	class extension_member_last_visit extends Extension {
-		
+
 		public static $entryManager = null;
 
 
 		public function __construct() {
 			extension_member_last_visit::$entryManager = new EntryManager(Symphony::Engine());
 		}
-				
+
 		public function getSubscribedDelegates() {
 			return array(
 				array(
@@ -86,7 +86,7 @@
 
 		public function uninstall(){
 			Symphony::Configuration()->remove('member_last_visit');
-			Administration::instance()->saveConfig();
+			Symphony::Configuration()->write();
 
 			if(parent::uninstall() == true){
 				Symphony::Database()->query("DROP TABLE `tbl_fields_member_last_visit`");
@@ -101,12 +101,12 @@
 
 			Symphony::Configuration()->set('interval', $settings['member_last_visit']['interval'], 'member_last_visit');
 
-			Administration::instance()->saveConfig();
+			Symphony::Configuration()->write();
 		}
 
 		public function __logVisit() {
 			$driver = Symphony::ExtensionManager()->create('members');
-			
+
 			if(!$member_id = $driver->getMemberDriver()->getMemberID()) return false;
 
 			$cookie = new Cookie(
@@ -139,5 +139,5 @@
 			return Symphony::Configuration()->get('interval', 'member_last_visit');
 		}
 	}
-	
+
 ?>
