@@ -1,17 +1,23 @@
-#Member Last Visit
+# Member Last Visit
 
-Works in conjunction with the Members extension and logs a member's last visit.
+This extension for [Symphony CMS][1] logs the date and time of a member's last visit.
 
-##Install
+## 1. Dependencies
 
-1. Upload the 'member_last_visit' folder in this archive to your Symphony
-   'extensions' folder.
-2. Enable extension by selecting the "Member Last Visit" item under Extensions, choose Enable
-   from the with-selected menu, then click Apply.
-3. Choose a visit interval under Symphony preferences.
-4. Add the field type, "Members: Last Visit" to your Member section.
-5. Resave existing member entries.
+You need to have the extension [Members][2] installed and set up to use this extension.
 
-##Uninstall
+## 2. Installation
 
-1. Uninstall extension by selecting the "Member Last Visit" item under Extensions, choose Uninstall from the with-selected menu, then click Apply.
+1. Upload the `/member_last_visit` folder in this archive to your Symphony `/extensions` folder.
+2. Go to **System → Extensions** in your Symphony admin area.
+3. Enable the extension by selecting '**Member Last Visit**', choose '**Enable**' from the '**With Selected…**' menu, then click '**Apply**'.
+
+## 3. Configuration & Usage ##
+
+1. Go to **System → Preferences** and set the desired visit interval.
+2. Add the field type '**Member: Last Visit**' to your Member section.
+3. Optionally resave existing member entries.
+
+
+[1]: http://getsymphony.com
+[2]: http://symphonyextensions.com/extensions/members/
