@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension id="member_last_visit" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
 	<name>Member Last Visit</name>
-	<description>Extend Symphony's Members extension by logging the date and time of a member's last visit.</description>
+	<description>Log the date and time of a member's last visit.</description>
 	<repo type="github">https://github.com/twiro/member_last_visit</repo>
 	<url type="discuss">http://symphony-cms.com/discuss/thread/85292/</url>
 	<types>
@@ -18,7 +18,7 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="1.0.6" date="2017-04-19" min="2.4.0" max="2.6.X">
+		<release version="1.0.6" date="2017-04-19" min="2.3.2" max="2.6.X">
 			- Compatibility with Symphony 2.4.X – 2.6.X
 		</release>
 		<release version="1.0.5" date="2013-04-24" min="2.3.2" max="2.3.X">
