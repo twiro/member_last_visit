@@ -4,7 +4,7 @@ This extension for [Symphony CMS][1] logs the date and time of a member's last v
 
 ## 1. Dependencies
 
-You need to have the extension [Members][2] installed and set up to use this extension.
+You need to have the [Members][2]-extension installed and configured to properly make use of this extension.
 
 ## 2. Installation
 
@@ -17,6 +17,10 @@ You need to have the extension [Members][2] installed and set up to use this ext
 1. Go to **System → Preferences** and set the desired visit interval.
 2. Add the field type '**Member: Last Visit**' to your Member section.
 3. Optionally resave existing member entries.
+
+## 4. Acknowledgements ##
+
+This extension was originally developed by [Mark Lewis](https://github.com/lewiswharf) in 2012.
 
 
 [1]: http://getsymphony.com
